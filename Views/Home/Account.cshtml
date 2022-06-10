@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+
+<h2>Account</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Create an account</h2>
+        <p>
+            This website allows users to buy and sell their own goods for free! All that is required is a email and phone number. Click the button below to sign up!
+        </p>
+        <p><button class="btn btn-primary"> @Html.ActionLink("Create An Account", "Create", "Customers") &raquo; </button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Sign In</h2>
+        <p>If you already have an account, sign in below!</p>
+        <br />
+        <br />
+       
+        <p><button class="btn btn-primary"> @Html.ActionLink("Sign In", "Create", "Customers") &raquo;</button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Edit Details</h2>
+        <p>If you already have an account and want some details altered, please fill out the form below and an administrator will update ASAP.</p>
+        
+        <form action="https://forms.gle/cXPCi5TCD2W4FoNk7">
+            <input type="submit" class="btn btn-primary" value="Edit" />
+        </form>
+      
+    </div>
+</div>

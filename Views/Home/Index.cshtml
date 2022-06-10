@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <br />
+    <h1>Esports Ecommerce</h1>
+    <p class="lead">Esports Ecommerce is the best place to shop all things Esports, shop from a wide variety of products from different organisations.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Esports Ecommerce gives you a platform where you are able to buy and sell good from all across different Esports organsiations, if you are new or an existing customer press the button below to enter the account section.
+        </p>
+        <p><button class="btn btn-primary"> @Html.ActionLink("Signup/Login", "Account", "Home") &raquo;</button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>The Store</h2>
+        <p>The store offers a wide variety of products from every Esports organisation at the cheapest prizes, press the button below to browse</p>
+        <p><button class="btn btn-primary"> @Html.ActionLink("Shop", "Shop", "Shop") &raquo;</button></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Selling</h2>
+        <p>You can easily put up your own products for sale, just press the button below to get started.</p>
+        <p><button class="btn btn-primary"> @Html.ActionLink("Sell", "Sell", "Shop") &raquo;</button></p>
+    </div>
+</div>

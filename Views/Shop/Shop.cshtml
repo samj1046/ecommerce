@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="~/Content/all.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShopNow</title>
+</head>
+
+<body>
+  
+    <nav class="navbar navbar-expand-md bg-secondary sticky-top">
+        <a class="navbar-brand text-white" href="index.html">
+           
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#jersey">Jerseys <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Hoodies"> Hoodies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#Hats"> Hats</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#Bags"> Bags</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white btn" id="cart" type="button" data-toggle="modal"
+                       data-target="#exampleModalScrollable" onclick="cart()" href="#Bags">
+                        <i class="fas fa-cart-arrow-down"></i>
+                        My Cart
+                    </a>
+                </li>
+    </nav>
+ 
+    <h1 class="text-center mt-3 m-5">Welcome to the Shop</h1>
+
+    <h2 class="text-center">Jerseys</h2>
+    <div id="jersey" class="row ml-3 m-5">
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 15rem;">
+            <img src="~/Images/dmu.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title co text-center">DMU Jersey</h5>
+                <p class="card-text cop text-center display-3">$30</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(1)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/g2-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title pas text-center">G2 Jersey</h5>
+                <p class="card-text pasp text-center display-3">$40</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(2)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/c9-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title icm text-center">C9 Jersey</h5>
+                <p class="card-text icmp display-3 text-center">$46</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(3)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center">Bags</h2>
+    <div id="Bags" class="row ml-3 m-5">
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/bag-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title a1 text-center">All-in-1 Esports bag </h5>
+                <p class="card-text a1p text-center display-3">$70</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(4)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/g2bag-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title zm text-center">G2 bag</h5>
+                <p class="card-text zmp text-center display-3">$32</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(5)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/t1bag-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title lt text-center">T1 bag</h5>
+                <p class="card-text ltp text-center display-3">$51</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(6)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center">Hats</h2>
+    <div id="Hats" class="row ml-3 m-5" >
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/t1hat-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title ld text-center">T1 hat</h5>
+                <p class="card-text ldp text-center display-3">$15</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(7)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/tsmhat-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title lc text-center">TSM hat</h5>
+                <p class="card-text text-center lcp display-3">$17 </p>
+                <div class="text-center"><a class="btn" tabindex="0" onclick="addToCart(8)">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/g2hat-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title tf text-center">G2 hat</h5>
+                <p class="card-text text-center tfp display-3">$22</p>
+                <div class="text-center"> <a tabindex="0" onclick="addToCart(9)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+    </div>
+
+   
+    <h2 class="text-center">Hoodies</h2>
+    <div id="Hoodies" class="row ml-3 m-5">
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/dmuj-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title ms text-center">DMU hoodie</h5>
+                <p class="card-text msp text-center display-3">$62</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(10)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/fnchoodie-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title br text-center">FNC hoodie</h5>
+                <p class="card-text brp text-center display-3">$71</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(11)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+
+        <div class="card col-sm-3 m-1 ml-5 bg-transparent" style="width: 18rem;">
+            <img src="~/Images/c9hoodie-removebg-preview.png" class="card-img-top img-responsive">
+            <div class="card-body">
+                <h5 class="card-title rg text-center">C9 hoodie</h5>
+                <p class="card-text rgp text-center display-3">$95</p>
+                <div class="text-center"><a tabindex="0" onclick="addToCart(12)" class="btn">Add to cart</a></div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle"><i class="fas fa-cart-arrow-down"></i>My Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   
+                    <div>
+                        <ul class="list">
+                        </ul>
+                        <div>
+                            <h3 class="bill px-5">Select Something</h3>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary"> @Html.ActionLink("Checkout", "Checkout", "Shop") &raquo;</button>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="~/Scripts/shop.js"></script>
+</body>
+
+</html>
