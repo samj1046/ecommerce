@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourseworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Email" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Jobtitle" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Username" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Address" Type="nchar" MaxLength="40" />
+    <Property Name="Email" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Phonenumber" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Username" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Coursework.dbo.Sell' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="NameOfProduct" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="Name" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="NameOfProduct" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Firstname" Type="nchar" MaxLength="20" />
+    <Property Name="Surname" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Admin_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CourseworkModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sell" EntityType="Self.Sell" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Sell].[Name] AS [Name], 
+    [Sell].[Email] AS [Email], 
+    [Sell].[NameOfProduct] AS [NameOfProduct], 
+    [Sell].[Price] AS [Price]
+    FROM [dbo].[Sell] AS [Sell]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Admin_User" Association="Self.FK_Admin_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_User" Association="Self.FK_Customer_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
